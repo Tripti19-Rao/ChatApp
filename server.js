@@ -15,7 +15,6 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-//  socket here smthng happns.. i get in my terminal..bt in browser when i open two windows..i dont get the incoming msgs
 const io = require("socket.io")(http)
 io.on("connection", (socket) => {
   console.log("connected");

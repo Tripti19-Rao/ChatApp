@@ -13,7 +13,6 @@ textarea.addEventListener('keyup', (e) => {
         sendMessage(e.target.value)
     }
 })
-//this is the ougoing this works fine i thnk
 function sendMessage(message) {
     let msg = {
         user: name,
@@ -40,12 +39,8 @@ function appendMessage(msg, type){
 
     scrollToBottom()
 }
- //this part.. 
- //does this get called?
-
- //idk how socket stuyff works so see why socket isnt calling this method
- //once this get called, it will work, in server.js its getting but not received by client.js
-socket.on('message',(msg) => {//this function is never called  this function is the one which puts the msg on the html element
+ 
+socket.on('message',(msg) => {
     console.log("Incoming msg in client.js");
     appendMessage(msg, 'incoming')
     scrollToBottom()
